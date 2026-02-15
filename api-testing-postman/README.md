@@ -1,4 +1,5 @@
 API Testing Project – Postman
+
 📌 Project Overview
 
 This project demonstrates API testing using Postman. CRUD operations were tested using a public REST API. Validation includes status codes, headers, response body, and negative scenarios.
