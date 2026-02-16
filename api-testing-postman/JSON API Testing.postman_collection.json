@@ -1,0 +1,472 @@
+{
+  "info": {
+    "_postman_id": "de0ffa66-238a-4c3c-9b44-431bc445eeb4",
+    "name": "JSON API Testing",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "48508195",
+    "_collection_link": "https://go.postman.co/collection/48508195-de0ffa66-238a-4c3c-9b44-431bc445eeb4?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "TC_API_01",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://jsonplaceholder.typicode.com/posts/1",
+          "protocol": "https",
+          "host": [
+            "jsonplaceholder",
+            "typicode",
+            "com"
+          ],
+          "path": [
+            "posts",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "TC_API_02",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://jsonplaceholder.typicode.com/posts/99999",
+          "protocol": "https",
+          "host": [
+            "jsonplaceholder",
+            "typicode",
+            "com"
+          ],
+          "path": [
+            "posts",
+            "99999"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "TC_API_03",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "TC_API_04",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"id\": 1,\r\n  \"title\": \"Updated Title for My CV Project\",\r\n  \"body\": \"This is the new content after a successful PUT request.\",\r\n  \"userId\": 1\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{TestURL}}/posts/1",
+          "host": [
+            "{{TestURL}}"
+          ],
+          "path": [
+            "posts",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "TC_API_05",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"title\": \"A Partially Updated Title\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{TestURL}}/posts/1",
+          "host": [
+            "{{TestURL}}"
+          ],
+          "path": [
+            "posts",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "TC_API_06",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"title\": \"A Partially Updated Title\"\r\n}"
+        },
+        "url": {
+          "raw": "{{TestURL}}/posts/1",
+          "host": [
+            "{{TestURL}}"
+          ],
+          "path": [
+            "posts",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "TC_API_07",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"body\": \"This request is missing the required title field.\",\r\n  \"userId\": 1\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{TestURL}}/posts",
+          "host": [
+            "{{TestURL}}"
+          ],
+          "path": [
+            "posts"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "TC_API_08",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"id\": 1,\r\n  \"title\": 12345,\r\n  \"body\": \"Testing invalid data type for title field.\",\r\n  \"userId\": 1\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{TestURL}}/posts/1",
+          "host": [
+            "{{TestURL}}"
+          ],
+          "path": [
+            "posts",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "TC_API_09",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"id\": 1,\r\n  \"title\": 12345,\r\n  \"body\": \"Testing invalid data type for title field.\",\r\n  \"userId\": 1\r\n}"
+        },
+        "url": {
+          "raw": "{{TestURL}}/invalidendpoint",
+          "host": [
+            "{{TestURL}}"
+          ],
+          "path": [
+            "invalidendpoint"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "TC_API_10",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"id\": 1,\r\n  \"title\": 12345,\r\n  \"body\": \"Testing invalid data type for title field.\",\r\n  \"userId\": 1\r\n}"
+        },
+        "url": {
+          "raw": "{{TestURL}}/posts/99999",
+          "host": [
+            "{{TestURL}}"
+          ],
+          "path": [
+            "posts",
+            "99999"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "TC_API_11",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true,
+        "disabledSystemHeaders": {}
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"id\": 1,\r\n  \"title\": 12345,\r\n  \"body\": \"Testing invalid data type for title field.\",\r\n  \"userId\": 1\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{TestURL}}/posts/1",
+          "host": [
+            "{{TestURL}}"
+          ],
+          "path": [
+            "posts",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "TC_API_12",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "TC_API_13",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"id\": 1,\r\n  \"title\": 12345,\r\n  \"body\": \"Testing invalid data type for title field.\",\r\n  \"userId\": 1\r\n}"
+        },
+        "url": {
+          "raw": "{{TestURL}}/posts/1",
+          "host": [
+            "{{TestURL}}"
+          ],
+          "path": [
+            "posts",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "TC_API_14",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer my_test_token_12345",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"id\": 1,\r\n  \"title\": 12345,\r\n  \"body\": \"Testing invalid data type for title field.\",\r\n  \"userId\": 1\r\n}"
+        },
+        "url": {
+          "raw": "{{TestURL}}/posts/1",
+          "host": [
+            "{{TestURL}}"
+          ],
+          "path": [
+            "posts",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "TC_API_15",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer my_test_token_12345",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"id\": 1,\r\n  \"title\": 12345,\r\n  \"body\": \"Testing invalid data type for title field.\",\r\n  \"userId\": 1\r\n}"
+        },
+        "url": {
+          "raw": "{{TestURL}}/posts/1",
+          "host": [
+            "{{TestURL}}"
+          ],
+          "path": [
+            "posts",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "TC_API_16",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer EXPIRED_TOKEN_XYZ",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"id\": 1,\r\n  \"title\": 12345,\r\n  \"body\": \"Testing invalid data type for title field.\",\r\n  \"userId\": 1\r\n}"
+        },
+        "url": {
+          "raw": "{{TestURL}}/posts/1",
+          "host": [
+            "{{TestURL}}"
+          ],
+          "path": [
+            "posts",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "TC_API_17",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer some_random_token_123",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"id\": 1,\r\n  \"title\": 12345,\r\n  \"body\": \"Testing invalid data type for title field.\",\r\n  \"userId\": 1\r\n}"
+        },
+        "url": {
+          "raw": "{{TestURL}}/posts/1",
+          "host": [
+            "{{TestURL}}"
+          ],
+          "path": [
+            "posts",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "TC_API_18",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer some_random_token_123",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"title\": \"My New Task\"\r\n  \"body\": \"This will fail because of the missing comma above\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{TestURL}}/posts",
+          "host": [
+            "{{TestURL}}"
+          ],
+          "path": [
+            "posts"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "TestURL",
+      "value": "",
+      "type": "default"
+    }
+  ]
+}
