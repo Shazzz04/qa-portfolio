@@ -1,60 +1,49 @@
-# Intelligent Task Prioritization System – API Testing Suite
+# API Testing & Automation Project (Postman)
 
 ## 📌 Project Overview
-**Author:** Shaza Faizer  
-**Course:** Bachelors in Software Engineering (Edge Hill University)  
-**Project Date:** Dec 15, 2025 – May 5, 2026
-
-This repository contains a comprehensive API testing suite for an **Intelligent Task Prioritization System**. The project validates backend stability, data integrity, and security protocols using the JSONPlaceholder REST API as a mock production environment.
+This project demonstrates professional API testing and automation using **Postman**. It covers the full lifecycle of testing a RESTful API, including functional CRUD operations, data validation, and advanced security/error-handling scenarios.
 
 
 
-## 🔧 Tools & Technologies
-* **Testing Tool:** Postman (Desktop & Web)
-* **Automation:** JavaScript (Postman Sandbox)
+## 🔧 Tools & Environment
+* **Testing Tool:** Postman
+* **Scripting:** JavaScript (Postman Sandbox)
 * **Version Control:** GitHub
-* **Environment:** [JSONPlaceholder API](https://jsonplaceholder.typicode.com)
+* **Mock API:** [JSONPlaceholder](https://jsonplaceholder.typicode.com)
 
 ## ✅ Scope of Testing
-This suite covers the full lifecycle of API interactions, ensuring the prioritization system is robust against both user error and security threats.
-* **CRUD Operations:** GET, POST, PUT, PATCH, DELETE.
-* **Response Validation:** Status codes (200, 201, 400, 404), Headers, and Response Time.
-* **Negative Scenarios:** Testing for missing fields, invalid data types, and non-existent endpoints.
-* **Security Testing:** Authentication (401) and Authorization (403) handling.
+The suite consists of **19 Test Cases** designed to validate the reliability and security of backend endpoints:
 
-## 📊 Test Coverage & Results
-| Metric | Count |
-| :--- | :--- |
-| **Total Test Cases Executed** | 19 |
-| **Passed** | 14 |
-| **Failed/Identified Defects** | 5 (Security-related) |
+* **CRUD Validation:** Verified `GET`, `POST`, `PUT`, `PATCH`, and `DELETE` methods.
+* **Status Code Testing:** Ensured correct returns for `200 OK`, `201 Created`, `400 Bad Request`, and `404 Not Found`.
+* **Response Validation:** * **Headers:** Validated `Content-Type` and `Charset`.
+    * **Body:** Verified JSON structure and data types (String/Number).
+    * **Performance:** Confirmed response times are consistently `< 1000ms`.
+* **Negative & Security Testing:** * Testing behavior with **Missing Required Fields**.
+    * Simulating **Unauthorized Access** (Missing/Invalid Tokens).
+    * Handling **Malformed JSON** syntax.
 
-### Key Findings
-* **Critical Defect:** The API lacks strict authentication (Returned `200 OK` for requests with invalid/missing tokens in TC_API_15 & 16).
-* **Performance:** All valid endpoints responded within **< 1000ms**.
+## 📊 Test Execution Summary
+| Category | Total Tests | Status |
+| :--- | :--- | :--- |
+| **Functional (CRUD)** | 10 | ✅ Pass |
+| **Validation (Headers/Time)** | 4 | ✅ Pass |
+| **Security & Error Handling** | 5 | ⚠️ 1 Pass / 4 Fail* |
 
-## 📐 Prioritization Logic (Formula Derivation)
-As part of the system design (Phase 3), the prioritization algorithm calculates task urgency using the following weighted formula:
+> **Note on Security Results:** In cases TC_API_15, 16, and 17, the mock API bypassed security headers (returned `200 OK` instead of `401 Unauthorized` or `403 Forbidden`). In a real-world production environment, these would be documented as **critical security vulnerabilities**.
 
-$$P = (W_d \times D) + (W_i \times I)$$
 
-Where:
-* $P$ = Final Priority Score
-* $W_d$ = Weight of the Deadline
-* $W_i$ = Weight of Task Importance
-* $D, I$ = Normalized data inputs
 
-The API tests in this suite ensure that the data structures (`userId`, `id`, `title`, `body`) remain consistent to prevent calculation errors in the frontend.
+## 📁 Project Structure
+* `API_Test_Suite.json`: The exported Postman collection containing all 19 tests and automation scripts.
+* `README.md`: Project documentation and summary.
+* `Execution_Screenshots/`: Evidence of passed test runs within the Postman console.
 
-## 📁 Project Files
-* [**Postman Collection**](./API_Test_Suite.json) - Full JSON export of the 19 test cases.
-* [**Test Case Document**](./Test_Case_Report.pdf) - Detailed spreadsheet of Expected vs. Actual results.
-* **Bug Report** - Documented security flaws regarding token bypass.
-
-## 🚀 How to Execute
-1.  **Import:** Download the `.json` collection file and import it into Postman.
-2.  **Environment:** Ensure the `baseUrl` is set to `https://jsonplaceholder.typicode.com`.
-3.  **Run:** Open the Collection Runner and click **Run Collection** to see automated test results.
+## 🚀 Instructions to Run
+1. **Import** the `API_Test_Suite.json` into your Postman Workspace.
+2. Ensure the request URL is set to `https://jsonplaceholder.typicode.com`.
+3. Open the **Collection Runner** in Postman.
+4. Click **Run Collection** to execute all automated tests and view the results in the console.
 
 ---
-*This project is part of a Software Engineering degree program and demonstrates professional QA competency in API Automation.*
+*This project showcases my ability to write automated test scripts in JavaScript to validate API responses instantly and demonstrates a "test-to-break" mindset by uncovering how systems handle bad data.*
